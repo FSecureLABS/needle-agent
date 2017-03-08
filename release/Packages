@@ -1,0 +1,13 @@
+Package: mwr.needle.agent
+Version: 1.0.1
+Section: Develpment
+Maintainer: Marco Lancini
+Architecture: iphoneos-arm
+Filename: ./NeedleAgent.deb
+Size: 382572
+MD5sum: 6ad324984ea9c8a5c9b9a000b1e6e3e5
+Description: Needle Agent
+Name: NeedleAgent
+Author: Marco Lancini
+Homepage: http://mobiletools.mwrinfosecurity.com
+
