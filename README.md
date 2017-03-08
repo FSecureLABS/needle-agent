@@ -6,7 +6,7 @@ _Needle_ is an open source, modular framework to streamline the process of condu
 
 # Description
 
-This repo contains the native Agent of [Needle](https://github.com/mwrlabs/needle/)
+This repo contains the native Agent of [Needle](https://github.com/mwrlabs/needle/).
 
 
 
