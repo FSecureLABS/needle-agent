@@ -3,10 +3,9 @@
 
 # Description
 
-NeedleAgent is an open source iOS app supplementary to [needle](https://github.com/mwrlabs/needle), the iOS security testing framework. It allows needle to programmatically perform tasks natively on the device eliminating the need for third party tools. The agent plays the role of a server and listens for TCP connections so can be connected to by needle or any other TCP client over wifi/ethernet or over USB with usbmuxd.
+NeedleAgent is an open source iOS app complementary to [needle](https://github.com/mwrlabs/needle), the iOS security testing framework. It allows needle to programmatically perform tasks natively on the device eliminating the need for third party tools. The agent plays the role of a server which listens for TCP connections coming from needle (or any other TCP client).
 
-Like needle, the agent is designed to be easily extensible: the agent has certain messages (opcodes) that it will respond to.
-Adding an opcode to the agent only requires one method to be written.
+The agent has certain messages (opcodes) that it will respond to, and, like needle, it is designed to be easily extensible: adding an opcode to the agent only requires one method to be written.
 
 
 # Installation
