@@ -1,14 +1,12 @@
 ![Needle](https://labs.mwrinfosecurity.com/assets/needle-logo-blue.jpg)
 
 
-_Needle_ is an open source, modular framework to streamline the process of conducting security assessments of iOS apps.
-
-
 # Description
 
-This repo contains the native Agent of [Needle](https://github.com/mwrlabs/needle/).
+NeedleAgent is an open source iOS app supplementary to [needle](https://github.com/mwrlabs/needle), the iOS security testing framework. It allows needle to programmatically perform tasks natively on the device eliminating the need for third party tools. The agent plays the role of a server and listens for TCP connections so can be connected to by needle or any other TCP client over wifi/ethernet or over USB with usbmuxd.
 
-
+Like needle, the agent is designed to be easily extensible: the agent has certain messages (opcodes) that it will respond to.
+Adding an opcode to the agent only requires one method to be written.
 
 
 # Installation
