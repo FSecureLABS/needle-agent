@@ -17,7 +17,7 @@
 +(NSString *)run:(NSArray *)args
 {
     NSString *res = [self listApplications];
-    NSString * responseString = [NSString stringWithFormat:@"%@: %@", COMMAND_RETURN, res];
+    NSString * responseString = [NSString stringWithFormat:@"%@%@%@", COMMAND_OUTPUT_START, res, COMMAND_OUTPUT_END];
     return responseString;
 }
 
@@ -61,6 +61,12 @@
     // Convert it to JSON
     NSError * err;
     NSData * jsonData = [NSJSONSerialization dataWithJSONObject:all_apps options:0 error:&err];
+    
+    NSLog(@">>>>");
+    NSLog(@"%@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]);
+    NSLog(@">>>>");
+    
+    
     return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
 }
 

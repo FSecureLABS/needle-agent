@@ -35,7 +35,7 @@
     self.portTextField.text = [NSString stringWithFormat:@"%@", DEFAULT_PORT];
     
     // Update versionLabel
-    self.versionLabel.text = [NSString stringWithFormat:@"V.%@", AGENT_VERSION];
+    self.versionLabel.text = [NSString stringWithFormat:@"v.%@", AGENT_VERSION];
     
     // Allow number keyboard to be dismissed by tapping outside the keyboard
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]

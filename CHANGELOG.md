@@ -5,10 +5,15 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 #### Added
+#### Fixed
+#### Removed
+
+
+## [1.0.1] - 2017-03-15
 
 #### Fixed
-
-#### Removed
+- Communication with Needle Core
+- Naming convention
 
 
 
