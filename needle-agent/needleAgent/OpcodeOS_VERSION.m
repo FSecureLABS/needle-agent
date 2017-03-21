@@ -13,7 +13,8 @@
 +(NSString *)run:(NSArray *)args
 {
     NSString *res = [self getOSVersion];
-    NSString * responseString = [NSString stringWithFormat:@"%@%@%@", COMMAND_OUTPUT_START, res, COMMAND_OUTPUT_END];
+    NSLog(@"RES: %@", res);
+    NSString * responseString = [NSString stringWithFormat:@"%@%@", res, COMMAND_OUTPUT_END];
     return responseString;
 }
 
