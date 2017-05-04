@@ -53,8 +53,8 @@
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         // Prepend to responses string so messages appear at top of screen
-        [self.responsesString
-         appendString:[NSString stringWithFormat:@"> %@\n", message]];
+        self.responsesString = [NSString stringWithFormat:@"> %@\n%@", message, self.responsesString];
+        
         // Update UILabel with new responses
         self.responsesLabel.text = self.responsesString;
     });

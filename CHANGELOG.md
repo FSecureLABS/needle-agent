@@ -4,9 +4,12 @@ All notable changes to this project will be documented in this file.
 
 
 ## Unreleased
+
 #### Added
+- Move `list_apps` to `Utils`
+
 #### Fixed
-#### Removed
+- Prepend to responses string so messages appear at top of screen
 
 
 ## [1.0.2] - 2017-03-21

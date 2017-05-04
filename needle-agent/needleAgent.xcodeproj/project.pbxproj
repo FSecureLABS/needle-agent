@@ -143,8 +143,6 @@
 				A974E21F1E6861A500F60BEF /* OpcodeLIST_APPS.m */,
 				A974E2211E68732600F60BEF /* OpcodeOS_VERSION.m */,
 				A974E21D1E68608D00F60BEF /* OpcodeSTOP.m */,
-				A9B294EE1E9BACC200ACCCA6 /* Utils.h */,
-				A9B294F01E9BACD000ACCCA6 /* Utils.m */,
 			);
 			name = Opcodes;
 			sourceTree = "<group>";
@@ -152,6 +150,8 @@
 		A99C83C91E14528B00D7D13C /* Handlers */ = {
 			isa = PBXGroup;
 			children = (
+				A9B294EE1E9BACC200ACCCA6 /* Utils.h */,
+				A9B294F01E9BACD000ACCCA6 /* Utils.m */,
 				E91E39221D5B4BC600720D62 /* MWRCommandHandler.h */,
 				E91E39231D5B4BC600720D62 /* MWRCommandHandler.m */,
 			);
