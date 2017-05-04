@@ -16,6 +16,8 @@
 		A9A27A4F1E5DD04B0014E1A7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A27A4E1E5DD04B0014E1A7 /* MobileCoreServices.framework */; };
 		A9A27A521E5DD1350014E1A7 /* FBApplicationInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A27A501E5DD1350014E1A7 /* FBApplicationInfo.h */; };
 		A9A27A531E5DD1350014E1A7 /* LSApplicationProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A27A511E5DD1350014E1A7 /* LSApplicationProxy.h */; };
+		A9B294EF1E9BACC200ACCCA6 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = A9B294EE1E9BACC200ACCCA6 /* Utils.h */; };
+		A9B294F11E9BACD000ACCCA6 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B294F01E9BACD000ACCCA6 /* Utils.m */; };
 		A9C7110D1E65DD4D0084103A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9C7110C1E65DD4D0084103A /* Assets.xcassets */; };
 		A9C7110F1E65E8DD0084103A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C7110E1E65E8D60084103A /* Foundation.framework */; };
 		A9CFE9511E5DA69B006D6E08 /* LSApplicationWorkspace.h in Headers */ = {isa = PBXBuildFile; fileRef = A9CFE9501E5DA69B006D6E08 /* LSApplicationWorkspace.h */; };
@@ -45,6 +47,8 @@
 		A9A27A4E1E5DD04B0014E1A7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		A9A27A501E5DD1350014E1A7 /* FBApplicationInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBApplicationInfo.h; sourceTree = "<group>"; };
 		A9A27A511E5DD1350014E1A7 /* LSApplicationProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSApplicationProxy.h; sourceTree = "<group>"; };
+		A9B294EE1E9BACC200ACCCA6 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		A9B294F01E9BACD000ACCCA6 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		A9C7110C1E65DD4D0084103A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9C7110E1E65E8D60084103A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A9CEF2D81E607515006A827E /* Xcode.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = Xcode.app; path = ../../../../../../../../Applications/Xcode.app; sourceTree = "<group>"; };
@@ -136,9 +140,11 @@
 			children = (
 				A90CB6A11E66EA71009FEA35 /* PrivateInterfaces */,
 				A93B0E0A1E157C0C002AAAA8 /* OpcodeProtocol.h */,
-				A974E21D1E68608D00F60BEF /* OpcodeSTOP.m */,
 				A974E21F1E6861A500F60BEF /* OpcodeLIST_APPS.m */,
 				A974E2211E68732600F60BEF /* OpcodeOS_VERSION.m */,
+				A974E21D1E68608D00F60BEF /* OpcodeSTOP.m */,
+				A9B294EE1E9BACC200ACCCA6 /* Utils.h */,
+				A9B294F01E9BACD000ACCCA6 /* Utils.m */,
 			);
 			name = Opcodes;
 			sourceTree = "<group>";
@@ -206,6 +212,7 @@
 				A9A27A531E5DD1350014E1A7 /* LSApplicationProxy.h in Headers */,
 				A9CFE9511E5DA69B006D6E08 /* LSApplicationWorkspace.h in Headers */,
 				A974E21B1E685B4100F60BEF /* OpcodeProtocol.h in Headers */,
+				A9B294EF1E9BACC200ACCCA6 /* Utils.h in Headers */,
 				A9A27A521E5DD1350014E1A7 /* FBApplicationInfo.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,6 +352,7 @@
 				E9B171FA1D548F6A00DB3B60 /* AppDelegate.m in Sources */,
 				E91E39331D66094B00720D62 /* MWRAsyncSocket.m in Sources */,
 				E91B6FD21D587B44000A2939 /* MWRServerViewController.m in Sources */,
+				A9B294F11E9BACD000ACCCA6 /* Utils.m in Sources */,
 				E9B171F71D548F6A00DB3B60 /* main.m in Sources */,
 				A974E2201E6861A500F60BEF /* OpcodeLIST_APPS.m in Sources */,
 				E91E39241D5B4BC600720D62 /* MWRCommandHandler.m in Sources */,
@@ -371,11 +379,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					arm64,
-					armv7,
-					armv7s,
-				);
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -414,12 +418,12 @@
 				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos10.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 armv7 armv7s";
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
 		};
@@ -427,11 +431,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					arm64,
-					armv7,
-					armv7s,
-				);
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -464,13 +464,13 @@
 				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos10.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "arm64 armv7 armv7s";
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Release;
 		};

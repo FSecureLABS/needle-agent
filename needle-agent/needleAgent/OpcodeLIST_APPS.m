@@ -4,9 +4,6 @@
 //
 
 #import "OpcodeProtocol.h"
-#import "LSApplicationWorkspace.h"
-#import "FBApplicationInfo.h"
-#import "LSApplicationProxy.h"
 
 @interface OpcodeLIST_APPS : NSObject <OPCODE>
 @end
@@ -16,53 +13,18 @@
 
 +(NSString *)run:(NSArray *)args
 {
-    NSString *res = [self listApplications];
-    NSLog(@"RES: %@", res);
-    NSString * responseString = [NSString stringWithFormat:@"%@%@", res, COMMAND_OUTPUT_END];
-    return responseString;
-}
-
-+ (NSString *)listApplications
-{
-    NSMutableDictionary *all_apps = [NSMutableDictionary new];
-    NSDictionary *bundleInfo = nil;
-    
-    LSApplicationWorkspace *applicationWorkspace = [LSApplicationWorkspace defaultWorkspace];
-    NSArray *proxies = [applicationWorkspace allApplications];
-    
-    for (FBApplicationInfo *proxy in proxies)
-    {
-        NSString *appType = [proxy performSelector:@selector(applicationType)];
-        
-        if ([appType isEqualToString:@"User"] && proxy.bundleContainerURL && proxy.bundleURL)
-        {
-            NSString *itemName = ((LSApplicationProxy*)proxy).itemName;
-            if (!itemName)
-            {
-                itemName = ((LSApplicationProxy*)proxy).localizedName;
-            }
-            
-            bundleInfo = @{
-                           @"BundleURL": [proxy.bundleURL absoluteString],
-                           @"BundleContainer": [proxy.bundleContainerURL absoluteString],
-                           @"DataContainer": [proxy.dataContainerURL absoluteString],
-                           @"DisplayName": itemName,
-                           @"BundleIdentifier": proxy.bundleIdentifier,
-                           @"BundleVersion": proxy.bundleVersion,
-                           @"BundleURL": [proxy.bundleURL absoluteString],
-                           @"Entitlements": proxy.entitlements,
-                           @"SDKVersion": proxy.sdkVersion,
-                           @"MinimumOS": ((LSApplicationProxy*)proxy).minimumSystemVersion,
-                           @"TeamID": ((LSApplicationProxy*)proxy).teamID,
-                           };
-            all_apps[proxy.bundleIdentifier] = bundleInfo;
-        }
-    }
+    // Get list of apps
+    NSMutableDictionary *allApps = [Utils listApplications];
     
     // Convert it to JSON
     NSError * err;
-    NSData * jsonData = [NSJSONSerialization dataWithJSONObject:all_apps options:0 error:&err];
-    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSData * jsonData = [NSJSONSerialization dataWithJSONObject:allApps options:0 error:&err];
+    NSString *res = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSLog(@"RES: %@", res);
+    
+    // Return output
+    NSString * responseString = [NSString stringWithFormat:@"%@%@", res, COMMAND_OUTPUT_END];
+    return responseString;
 }
 
 @end
