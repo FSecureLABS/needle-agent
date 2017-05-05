@@ -9,15 +9,23 @@ All notable changes to this project will be documented in this file.
 #### Removed
 
 
-## [1.0.2] - 2017-03-21
 
+## [1.0.3] - 2017-05-05
+#### Added
+- Move `list_apps` to `Utils`
+
+#### Fixed
+- Prepend to responses string so messages appear at top of screen
+
+
+
+## [1.0.2] - 2017-03-21
 #### Fixed
 - Communication with Needle Core
 
 
 
 ## [1.0.1] - 2017-03-15
-
 #### Fixed
 - Communication with Needle Core
 - Naming convention

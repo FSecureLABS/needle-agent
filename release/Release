@@ -1,7 +1,7 @@
 Origin: Needle Agent
 Label: Needle Agent
 Suite: stable
-Version: 1.0.2
+Version: 1.0.3
 Codename: agent
 Architectures: iphoneos-arm
 Components: main
