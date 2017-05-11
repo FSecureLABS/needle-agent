@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EVn-Gp-ziU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EVn-Gp-ziU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -42,30 +42,38 @@
                                 </constraints>
                             </scrollView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="rXT-aP-YA0">
-                                <rect key="frame" x="147.5" y="74" width="80" height="50"/>
+                                <rect key="frame" x="148" y="74" width="80" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="7Zl-mX-DOU"/>
                                     <constraint firstAttribute="height" constant="50" id="nMs-mF-Kbv"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CaD-AD-7dg">
-                                <rect key="frame" x="166.5" y="134" width="42" height="21"/>
+                                <rect key="frame" x="239" y="94" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.15960407257080078" green="0.34700363874435425" blue="0.4677003026008606" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBN-5M-Tky">
+                                <rect key="frame" x="167" y="124" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="CaD-AD-7dg" firstAttribute="top" secondItem="3kg-k2-ICG" secondAttribute="bottom" constant="30" id="1ci-5j-edM"/>
+                            <constraint firstItem="EDV-80-NQp" firstAttribute="top" secondItem="UBN-5M-Tky" secondAttribute="bottom" constant="20" id="23M-iR-B3e"/>
                             <constraint firstItem="EDV-80-NQp" firstAttribute="leading" secondItem="ue0-Jf-hdt" secondAttribute="leading" constant="20" id="2Qs-Qb-IB3"/>
                             <constraint firstItem="rXT-aP-YA0" firstAttribute="top" secondItem="3kg-k2-ICG" secondAttribute="bottom" constant="10" id="3JR-oY-dwU"/>
                             <constraint firstItem="rXT-aP-YA0" firstAttribute="centerX" secondItem="ue0-Jf-hdt" secondAttribute="centerX" id="77N-ON-aj2"/>
                             <constraint firstItem="sVa-jO-wqZ" firstAttribute="top" secondItem="EDV-80-NQp" secondAttribute="bottom" id="8fr-ZQ-Mlc"/>
-                            <constraint firstItem="EDV-80-NQp" firstAttribute="top" secondItem="CaD-AD-7dg" secondAttribute="bottom" constant="10" id="Sit-Ua-9us"/>
+                            <constraint firstItem="EDV-80-NQp" firstAttribute="top" secondItem="CaD-AD-7dg" secondAttribute="bottom" constant="50" id="Aha-jW-5hY"/>
                             <constraint firstItem="sVa-jO-wqZ" firstAttribute="top" secondItem="EDV-80-NQp" secondAttribute="bottom" id="XZx-Tf-nLK"/>
+                            <constraint firstItem="CaD-AD-7dg" firstAttribute="leading" secondItem="rXT-aP-YA0" secondAttribute="trailing" constant="11" id="Yn0-kY-uOv"/>
+                            <constraint firstItem="UBN-5M-Tky" firstAttribute="centerX" secondItem="rXT-aP-YA0" secondAttribute="centerX" id="Zp0-wA-SqU"/>
                             <constraint firstAttribute="trailing" secondItem="EDV-80-NQp" secondAttribute="trailing" constant="20" id="cSD-LD-U6g"/>
-                            <constraint firstItem="CaD-AD-7dg" firstAttribute="centerX" secondItem="ue0-Jf-hdt" secondAttribute="centerX" id="cVC-eK-jcM"/>
-                            <constraint firstItem="CaD-AD-7dg" firstAttribute="top" secondItem="rXT-aP-YA0" secondAttribute="bottom" constant="10" id="efA-Ke-kNk"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -103,6 +111,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="IPLabel" destination="UBN-5M-Tky" id="daR-yj-uie"/>
                         <outlet property="portTextField" destination="IZP-1H-KEJ" id="Fl5-wC-a03"/>
                         <outlet property="responsesLabel" destination="dU5-Ac-gi0" id="O5Z-hy-fWC"/>
                         <outlet property="versionLabel" destination="CaD-AD-7dg" id="cH6-QJ-TzS"/>
@@ -117,7 +126,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EVn-Gp-ziU" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3Cn-9a-bWp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Cn-9a-bWp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

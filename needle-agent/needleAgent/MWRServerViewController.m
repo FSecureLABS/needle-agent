@@ -5,6 +5,7 @@
 
 #import "MWRServerViewController.h"
 #import "Constants.h"
+#import "Utils.h"
 
 @implementation MWRServerViewController
 
@@ -36,6 +37,9 @@
     
     // Update versionLabel
     self.versionLabel.text = [NSString stringWithFormat:@"v.%@", AGENT_VERSION];
+    
+    // Update IP label
+    self.IPLabel.text = [NSString stringWithFormat:@"(IP: %@)", [Utils getIPAddress]];
     
     // Allow number keyboard to be dismissed by tapping outside the keyboard
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
