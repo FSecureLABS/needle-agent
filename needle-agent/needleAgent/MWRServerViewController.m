@@ -61,6 +61,9 @@
         
         // Update UILabel with new responses
         self.responsesLabel.text = self.responsesString;
+        
+        // Update IP label
+        self.IPLabel.text = [NSString stringWithFormat:@"(IP: %@)", [Utils getIPAddress]];
     });
 }
 
