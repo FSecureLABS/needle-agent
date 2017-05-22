@@ -5,11 +5,14 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 #### Added
-- Show device's IP address in the main screen
-
 #### Fixed
-
 #### Removed
+
+
+
+## [1.0.4] - 2017-05-22
+#### Added
+- Show device's IP address in the main screen
 
 
 
