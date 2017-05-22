@@ -10,6 +10,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+## [1.0.4] - 2017-05-22
+#### Added
+- Show device's IP address in the main screen
+
+
+
 ## [1.0.3] - 2017-05-05
 #### Added
 - Move `list_apps` to `Utils`

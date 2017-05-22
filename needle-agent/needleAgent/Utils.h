@@ -8,8 +8,8 @@
 @interface Utils : NSObject
 
 + (NSData *)listApplications;
-
-+(BOOL)copyFile:(NSString *)infile into:(NSString *)outfile;
++ (BOOL)copyFile:(NSString *)infile into:(NSString *)outfile;
++ (NSString *)getIPAddress;
 
 @end
 

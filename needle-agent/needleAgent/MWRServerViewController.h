@@ -12,6 +12,7 @@
 @interface MWRServerViewController : UIViewController <GCDAsyncSocketDelegate>{}
 
 @property (strong, nonatomic) IBOutlet UILabel *versionLabel;
+@property (strong, nonatomic) IBOutlet UILabel *IPLabel;
 @property (weak, nonatomic) IBOutlet UILabel *responsesLabel;
 @property (weak, nonatomic) IBOutlet UITextField *portTextField;
 @property NSMutableString *responsesString;

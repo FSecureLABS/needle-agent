@@ -6,7 +6,7 @@
 #ifndef Constants_h
 #define Constants_h
 
-#define AGENT_VERSION @"1.0.3"
+#define AGENT_VERSION @"1.0.4"
 #define DEFAULT_PORT @"4444"
 
 #define AGENT_NAME @"Needle Agent"
