@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 #### Added
+- `BundleType` and `SignerIdentity` to the apps' metadata
+
 #### Fixed
 #### Removed
 
