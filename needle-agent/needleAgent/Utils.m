@@ -28,27 +28,63 @@
     {
         NSString *appType = [proxy performSelector:@selector(applicationType)];
         
-        if ([appType isEqualToString:@"User"] && proxy.bundleContainerURL && proxy.bundleURL)
+        if ([appType isEqualToString:@"User"] || [appType isEqualToString:@"System"]) //&& proxy.bundleContainerURL && proxy.bundleURL)
         {
-            NSString *itemName = ((LSApplicationProxy*)proxy).itemName;
-            if (!itemName)
-            {
-                itemName = ((LSApplicationProxy*)proxy).localizedName;
-            }
+            // ------------------------------------------------------------------------------------------------
+            // EXTRACT FIELDS
+            // ------------------------------------------------------------------------------------------------
+            NSString *bundleType = proxy.bundleType;
             
+            NSString *itemName = ((LSApplicationProxy*)proxy).itemName;
+            if (!itemName) itemName = ((LSApplicationProxy*)proxy).localizedName;
+            
+            NSString *bundleURL = @"";
+            if (proxy.bundleURL) bundleURL = [proxy.bundleURL absoluteString];
+            
+            NSString *bundleContainerURL = @"";
+            if (proxy.bundleContainerURL) bundleContainerURL = [proxy.bundleContainerURL absoluteString];
+            
+            NSString *dataContainerURL = @"";
+            if (proxy.dataContainerURL) dataContainerURL = [proxy.dataContainerURL absoluteString];
+            
+            NSString *bundleIdentifier = @"";
+            if (proxy.bundleIdentifier) bundleIdentifier = proxy.bundleIdentifier;
+            
+            NSString *bundleVersion = @"";
+            if (proxy.bundleVersion) bundleVersion = proxy.bundleVersion;
+            
+            NSString *entitlements = @"";
+            if (proxy.entitlements) entitlements = proxy.entitlements;
+            
+            NSString *sdkVersion = @"";
+            if (proxy.sdkVersion) sdkVersion = proxy.sdkVersion;
+            
+            NSString *minimumOS = ((LSApplicationProxy*)proxy).minimumSystemVersion;
+            if (!minimumOS) minimumOS = @"";
+            
+            NSString *teamID = ((LSApplicationProxy*)proxy).teamID;
+            if (!teamID) teamID = @"";
+            
+            NSString *signerIdentity = @"";
+            if (proxy.signerIdentity) signerIdentity = proxy.signerIdentity;
+            
+            // ------------------------------------------------------------------------------------------------
+            // CREATE DICT
+            // ------------------------------------------------------------------------------------------------
             bundleInfo = @{
-                           @"BundleURL": [proxy.bundleURL absoluteString],
-                           @"BundleContainer": [proxy.bundleContainerURL absoluteString],
-                           @"DataContainer": [proxy.dataContainerURL absoluteString],
+                           @"BundleType": bundleType,
                            @"DisplayName": itemName,
-                           @"BundleIdentifier": proxy.bundleIdentifier,
-                           @"BundleVersion": proxy.bundleVersion,
-                           @"BundleURL": [proxy.bundleURL absoluteString],
-                           @"Entitlements": proxy.entitlements,
-                           @"SDKVersion": proxy.sdkVersion,
-                           @"MinimumOS": ((LSApplicationProxy*)proxy).minimumSystemVersion,
-                           @"TeamID": ((LSApplicationProxy*)proxy).teamID,
-                           };
+                           @"BundleURL": bundleURL,
+                           @"BundleContainer": bundleContainerURL,
+                           @"DataContainer": dataContainerURL,
+                           @"BundleIdentifier": bundleIdentifier,
+                           @"BundleVersion": bundleVersion,
+                           @"Entitlements": entitlements,
+                           @"SDKVersion": sdkVersion,
+                           @"MinimumOS": minimumOS,
+                           @"TeamID": teamID,
+                           @"SignerIdentity": signerIdentity,
+            };
             all_apps[proxy.bundleIdentifier] = bundleInfo;
         }
     }
@@ -57,7 +93,7 @@
 }
 
 
-+(BOOL)copyFile:(NSString *)infile into:(NSString *)outfile;
++(BOOL)copyFile:(NSString *)infile into:(NSString *)outfile
 {
     NSError *error;
     NSFileManager *fileManager = [NSFileManager defaultManager];

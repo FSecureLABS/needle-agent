@@ -10,6 +10,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+## [1.0.5] - 2017-06-07
+#### Added
+- `BundleType` and `SignerIdentity` to the apps' metadata
+
+
+
 ## [1.0.4] - 2017-05-22
 #### Added
 - Show device's IP address in the main screen

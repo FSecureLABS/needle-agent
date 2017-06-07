@@ -1,6 +1,6 @@
 Package: mwr.needle.agent
 Name: NeedleAgent
-Version: 1.0.4
+Version: 1.0.5
 Architecture: iphoneos-arm
 Description: Needle Agent
 Homepage: http://mobiletools.mwrinfosecurity.com
