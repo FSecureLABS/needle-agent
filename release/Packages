@@ -1,11 +1,11 @@
 Package: mwr.needle.agent
-Version: 1.0.4
+Version: 1.0.5
 Section: Develpment
 Maintainer: Marco Lancini
 Architecture: iphoneos-arm
 Filename: ./NeedleAgent.deb
-Size: 1357288
-MD5sum: 251b1ea0e42e30be40b026c198ea334f
+Size: 1360242
+MD5sum: 6759820adae2f07f00b754f8a816fc5a
 Description: Needle Agent
 Name: NeedleAgent
 Author: Marco Lancini
