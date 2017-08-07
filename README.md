@@ -1,5 +1,7 @@
 ![Needle](https://labs.mwrinfosecurity.com/assets/needle-logo-blue.jpg)
 
+[![Black Hat Arsenal](https://rawgit.com/toolswatch/badges/master/arsenal/2017.svg)](https://www.blackhat.com/us-17/arsenal.html#needle)
+
 
 # Description
 
