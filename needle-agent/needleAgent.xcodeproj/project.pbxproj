@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		518B75850D12DD83877A4729 /* Pods_needleAgent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B29985A24DBA4B98B3862D2 /* Pods_needleAgent.framework */; };
+		A65011D21F5C97E70006B9BE /* OpcodeDUMP_KEYCHAIN.m in Sources */ = {isa = PBXBuildFile; fileRef = A65011D11F5C97E70006B9BE /* OpcodeDUMP_KEYCHAIN.m */; };
 		A90CB6A71E6727AA009FEA35 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90CB6A61E6727A2009FEA35 /* Security.framework */; };
 		A974E21B1E685B4100F60BEF /* OpcodeProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A93B0E0A1E157C0C002AAAA8 /* OpcodeProtocol.h */; };
 		A974E21E1E68608D00F60BEF /* OpcodeSTOP.m in Sources */ = {isa = PBXBuildFile; fileRef = A974E21D1E68608D00F60BEF /* OpcodeSTOP.m */; };
@@ -36,6 +37,8 @@
 		305856903DDB45CA50AE55C2 /* Pods-needleAgentTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-needleAgentTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-needleAgentTests/Pods-needleAgentTests.release.xcconfig"; sourceTree = "<group>"; };
 		7B014009855E07263F36B776 /* Pods-needleAgentUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-needleAgentUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-needleAgentUITests/Pods-needleAgentUITests.release.xcconfig"; sourceTree = "<group>"; };
 		83310C1D77ED75BE61B9DEB9 /* Pods-needleAgentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-needleAgentTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-needleAgentTests/Pods-needleAgentTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A65011D11F5C97E70006B9BE /* OpcodeDUMP_KEYCHAIN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpcodeDUMP_KEYCHAIN.m; sourceTree = "<group>"; };
+		A65011D31F5C9D600006B9BE /* NeedleAgent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NeedleAgent.entitlements; sourceTree = "<group>"; };
 		A90CB6A61E6727A2009FEA35 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		A90CB6A91E6728DE009FEA35 /* SecurityFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SecurityFoundation.framework; path = ../../../../../../../../System/Library/Frameworks/SecurityFoundation.framework; sourceTree = "<group>"; };
 		A90CB6AB1E672907009FEA35 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = ../../../../../../../../System/Library/Frameworks/Cocoa.framework; sourceTree = "<group>"; };
@@ -143,6 +146,7 @@
 				A974E21F1E6861A500F60BEF /* OpcodeLIST_APPS.m */,
 				A974E2211E68732600F60BEF /* OpcodeOS_VERSION.m */,
 				A974E21D1E68608D00F60BEF /* OpcodeSTOP.m */,
+				A65011D11F5C97E70006B9BE /* OpcodeDUMP_KEYCHAIN.m */,
 			);
 			name = Opcodes;
 			sourceTree = "<group>";
@@ -179,6 +183,7 @@
 		E9B171F41D548F6A00DB3B60 /* needleAgent */ = {
 			isa = PBXGroup;
 			children = (
+				A65011D31F5C9D600006B9BE /* NeedleAgent.entitlements */,
 				A974E2191E68570D00F60BEF /* Server */,
 				A99C83C91E14528B00D7D13C /* Handlers */,
 				A99C83C81E14515300D7D13C /* Opcodes */,
@@ -350,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9B171FA1D548F6A00DB3B60 /* AppDelegate.m in Sources */,
+				A65011D21F5C97E70006B9BE /* OpcodeDUMP_KEYCHAIN.m in Sources */,
 				E91E39331D66094B00720D62 /* MWRAsyncSocket.m in Sources */,
 				E91B6FD21D587B44000A2939 /* MWRServerViewController.m in Sources */,
 				A9B294F11E9BACD000ACCCA6 /* Utils.m in Sources */,
@@ -480,7 +486,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libstdc++";
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = needleAgent/NeedleAgent.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = U38MMB3T7J;
@@ -505,7 +511,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libstdc++";
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = needleAgent/NeedleAgent.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = U38MMB3T7J;
